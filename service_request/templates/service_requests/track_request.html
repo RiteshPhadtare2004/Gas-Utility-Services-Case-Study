@@ -1,0 +1,9 @@
+<h2>Track Service Request</h2>
+<p>Service Type: {{ service_request.service_type }}</p>
+<p>Status: {{ service_request.status }}</p>
+<p>Created at: {{ service_request.created_at }}</p>
+{% if service_request.resolved_at %}
+    <p>Resolved at: {{ service_request.resolved_at }}</p>
+{% else %}
+    <p>This request is still being processed.</p>
+{% endif %}
