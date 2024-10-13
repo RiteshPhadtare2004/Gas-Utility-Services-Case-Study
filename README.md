@@ -1,6 +1,6 @@
 # Gas Utility Case Study
 
-This project is a simple Django application for managing gas utility services. It features an admin dashboard provided by Django and includes two primary routes.
+This project is a simple Django application for managing gas utility services. It features an admin dashboard provided by Django and includes several routes for service submissions, tracking, and request management.
 
 ## Table of Contents
 - [Features](#features)
@@ -14,8 +14,8 @@ This project is a simple Django application for managing gas utility services. I
 
 ## Features
 - **Admin dashboard** for managing services.
-- Two routes for handling service submissions and tracking.
-
+- Three routes for handling service submissions, tracking, and customer request tracking.
+  
 ## Technologies Used
 - **Python 3.10**
 - **Django**
@@ -87,9 +87,14 @@ This project is a simple Django application for managing gas utility services. I
 2. **Submit a Service Request:**
    - Navigate to [http://127.0.0.1:8000/services/submit/](http://127.0.0.1:8000/services/submit/) to submit a new service request by filling out the form.
 
-3. **Track a Service Request:**
+3. **Track a Service Request by ID:**
    - After submitting a service request, note down the ID (primary key) of the request.
    - You can track the request by going to the URL [http://127.0.0.1:8000/track/<pk>](http://127.0.0.1:8000/track/<pk>), replacing `<pk>` with the actual ID of your request.
+
+4. **Track a Service Request by Email and Date:**
+   - A new feature has been added to allow customers to track their service requests using their email and the date the request was made.
+   - Navigate to [http://127.0.0.1:8000/services/track_request/](http://127.0.0.1:8000/services/track_request/) and fill in your registered email and the request date to track your request.
+   - This route enables you to track your request without needing the specific request ID, offering more flexibility for customers.
 
 ## Routes
 1. **Admin Dashboard:**  
@@ -98,5 +103,8 @@ This project is a simple Django application for managing gas utility services. I
 2. **Service Submission:**  
    Submit a service request at `/services/submit/`.
 
-3. **Track Service Request:**  
-   Track a service request at `/track/<pk>/`, where `<pk>` is the primary key of the service request.
+3. **Track Service Request by ID:**  
+   Track a service request by ID at `/track/<pk>/`, where `<pk>` is the primary key of the service request.
+
+4. **Track Service Request by Email and Date:**  
+   Track a service request by providing your email and request date at `/services/track_request/`.
